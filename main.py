@@ -22,8 +22,12 @@ app.add_middleware(
 )
 
 TEMP_UPLOAD_DIR = "/tmp/temp_uploads" if os.getenv("VERCEL") else "./temp_uploads"
-os.makedirs(TEMP_UPLOAD_DIR, exist_ok=True)
-os.makedirs(PERSIST_DIR, exist_ok=True)
+
+try:
+    os.makedirs(TEMP_UPLOAD_DIR, exist_ok=True)
+    os.makedirs(PERSIST_DIR, exist_ok=True)
+except Exception as e:
+    print(f"Warning creating directories: {e}")
 
 class QueryRequest(BaseModel):
     session_id: str
