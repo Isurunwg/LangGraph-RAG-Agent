@@ -1,0 +1,10 @@
+fastapi>=0.110.0
+uvicorn>=0.28.0
+python-multipart>=0.0.9
+pypdf>=4.1.0
+langchain>=0.1.13
+langchain-openai>=0.1.1
+langchain-chroma>=0.1.0
+langgraph>=0.0.30
+python-dotenv>=1.0.1
+chromadb>=0.4.24
