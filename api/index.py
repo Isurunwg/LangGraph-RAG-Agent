@@ -1,4 +1,7 @@
 import os
-from main import app
+import sys
 
-# Entry point for Vercel Serverless Function
+# Ensure root directory is in sys.path for Vercel serverless imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from main import app
