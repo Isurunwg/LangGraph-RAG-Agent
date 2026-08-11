@@ -42,6 +42,10 @@ class UploadResponse(BaseModel):
     filename: str
     total_chunks: int
 
+@app.get("/")
+def root():
+    return {"status": "ok", "service": "LangGraph RAG Agent API"}
+
 @app.get("/health")
 def health_check():
     return {"status": "ok", "service": "LangGraph RAG Agent API"}
